@@ -1,20 +1,65 @@
 public class Demo {
+
     public static void main(String[] args) {
-        try {
-            Person person = new Person("Zlatina", 25, 1.78, 65.0);
-            System.out.println("Name: " + person.getName());
-            System.out.println("Age: " + person.getAge());
-            System.out.println("Height: " + person.getHeight());
-            System.out.println("Weight: " + person.getWeight());
+//        Notepad secured = new SecuredNotepad("123");
+//
+//        secured.createPage("title1", "text1");
+//        secured.createPage("title2", "text2");
+//        secured.createPage("title3", "text3");
+//        secured.createPage("title4", "text4");
+//
+//        secured.previewAllPages();
+//        System.out.println("-----------------------------------------------------");
+//        try {
+//            secured.replaceText(33, "nov text");
+//        } catch (PageNotFoundException e) {
+//            e.printStackTrace();
+//            System.out.println("please try again to find your page.");
+//        }
+//
+//        secured.previewAllPages();
+//
+//        System.out.println("-----------------------------------------------------");
+//        try {
+//            secured.deleteText(2);
+//        } catch (PageNotFoundException e) {
+//            e.printStackTrace();
+//            System.out.println("please try again to find your page.");
+//        }
+//        secured.previewAllPages();
 
-            // Here if I set height and weight setters the exception is still only for the first setAge and I can not understand why
-            // Also the setName is not used, because it's a string. I am not checking String for negative values
+//        Notepad simple = new SimpleNotepad();
+//
+//        simple.createPage("title1", "text1");
+//        simple.createPage("title2", "text2");
+//        simple.createPage("title3", "text3");
+//        simple.createPage("title4", "text4");
+//
+//        simple.previewAllPages();
+//        System.out.println("-----------------------------------------------------");
+//        try {
+//            simple.replaceText(33, "nov text");
+//        } catch (PageNotFoundException e) {
+//            e.printStackTrace();
+//            System.out.println("please try again to find your page.");
+//        }
+//
+//        simple.previewAllPages();
+//
+//        System.out.println("-----------------------------------------------------");
+//        try {
+//            simple.deleteText(2);
+//        } catch (PageNotFoundException e) {
+//            e.printStackTrace();
+//            System.out.println("please try again to find your page.");
+//        }
+//        simple.previewAllPages();
 
-            person.setAge(-27);
-            person.setHeight(-1.80);
-            person.setWeight(-70);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
+        ElectronicSecuredNotepad notepad = new ElectronicSecuredNotepad("123456");
+        notepad.start();
+        notepad.createPage("Page 1", "Text 1");
+        notepad.previewAllPages();
+        notepad.stop();
     }
+
 }

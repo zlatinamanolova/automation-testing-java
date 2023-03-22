@@ -14,5 +14,5 @@ public class Person {
         System.out.println("This person is a " + isMan);
 
     }
-    }
+}
 
